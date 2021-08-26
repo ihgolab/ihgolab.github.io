@@ -1115,7 +1115,7 @@ const quiz = [
     {
         tip: ['frontend', 'javascript'],
         q: 'Mi lesz a következő kifejezés eredménye?',
-        qb: '"8" * "8"',
+        qb: '&quot;8&quot; * &quot;8&quot;',
         options: ['"64"', "64", "NaN", "88"],
         answer: 1,
         expl: "",
