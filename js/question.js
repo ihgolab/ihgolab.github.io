@@ -1091,6 +1091,22 @@ options: ['igaz', 'hamis'],
 answer: 1,
 },
 {
+tip: ['frontend', 'css'],
+q: 'Milyen színű lesz a <code>h1</code> elem?',
+qb: '&lt;style&gt;\n#title { color: red; }\n.title { color: green; }\n&lt;/style&gt;\n&lt;h1 id=&quot;title&quot; class=&quot;title&quot;&gt;Fontos&lt;/h1&gt;',
+options: ['red', 'green'],
+answer: 0,
+expl: ''
+},
+{
+tip: ['frontend', 'javascript'],
+q: 'Mi lesz az <code>eredmeny</code> értéke?',
+qb: 'let tomb = [4, 6, 9];\nlet eredmeny = tomb[3];',
+options: ['null', 'undefined', 'SyntaxError', '""'],
+answer: 1,
+expl: ''
+},
+{
 tip: ['frontend', 'javascript'],
 q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
 qb: 'let szam = 1;\nswitch(szam) {\ncase 1:\n  szam = 2;\ndefault:\n  szam = 0;\n}',
