@@ -1108,6 +1108,38 @@ expl: ''
 },
 {
 tip: ['frontend', 'javascript'],
+q: 'Mi a következő összetett hozzárendelési operátor jelentése?',
+qb: 'sum += list',
+options: ['sum = sum + list', 'sum = list++', 'list = sum', 'list = sum + sum'],
+answer: 0,
+expl: ''
+},
+{
+tip: ['frontend', 'javascript'],
+q: 'Mi lesz a kód visszatérési értéke?',
+qb: 'let tomb = [2, 3, 9];\ntomb.indexOf(2);',
+options: ['0', '1', '2', '3'],
+answer: 0,
+expl: ''
+},
+{
+tip: ['frontend', 'javascript'],
+q: 'Mi lesz a kód visszatérési értéke?',
+qb: 'let tomb = [6, 7, 4, 1, 1, 9];\ntomb.slice(2, tomb.length);',
+options: ['[4, 1, 1,]', '[1, 1, 9]', '[4, 1, 1, 9]', '[7, 4, 1, 1]'],
+answer: 2,
+expl: ''
+},
+{
+tip: ['frontend', 'javascript'],
+q: 'Mi lesz a kód visszatérési értéke?',
+qb: 'let ertek = 214;\nif (ertek > 200) {\n  let ertek = 300;\n}\nertek;',
+options: ['214', '300', '200'],
+answer: 0,
+expl: ''
+},    
+{
+tip: ['frontend', 'javascript'],
 q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
 qb: 'let szam = 1;\nswitch(szam) {\ncase 1:\n  szam = 2;\ndefault:\n  szam = 0;\n}',
 options: ['0', '1', '2', 'szam'],
