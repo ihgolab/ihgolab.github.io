@@ -1137,7 +1137,15 @@ qb: 'let ertek = 214;\nif (ertek > 200) {\n  let ertek = 300;\n}\nertek;',
 options: ['214', '300', '200'],
 answer: 0,
 expl: ''
-},    
+},
+{
+tip: ['frontend', 'javascript'],
+q: 'Mi lesz a kód visszatérési értéke?',
+qb: 'let ertek = 104;\nif (ertek > 100) {\n  ertek = 150;\n}\nertek;',
+options: ['100', '104', '150'],
+answer: 2,
+expl: ''
+},     
 {
 tip: ['frontend', 'javascript'],
 q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
