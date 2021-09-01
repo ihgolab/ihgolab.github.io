@@ -48,6 +48,7 @@ function getNewQuestion() {
   if (currentQuestion.hasOwnProperty("qb")) {
     questionBlock.classList.remove("hide"); 
     qblData.innerHTML = currentQuestion.qb;
+    Prism.highlightAll();
   } else {
     qblData.innerHTML = "";
     questionBlock.classList.add("hide"); 
@@ -81,7 +82,6 @@ function getNewQuestion() {
   }
    questionCounter++;
 }
-
 
 // az aktuális próbálkozás eredményének lekérdezése
 function getResult(element) {
@@ -157,7 +157,6 @@ function quizOver() {
     resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + questionLimit;
   }
 
-
 function resetQuiz() {
   questionCounter = 0;
   correctAnswers = 0;
@@ -182,9 +181,7 @@ function tryAgainQuiz() {
   resetQuiz();
 }
 
-
 // #### KEZDŐPONT #####
-
 
 function startQuiz() {
   // homeBox elrejtése
