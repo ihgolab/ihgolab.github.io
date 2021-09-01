@@ -1149,7 +1149,7 @@ const quiz = [
     {
     tip: ['frontend', 'javascript'],
     q: 'Melyik CSS-tulajdonsággal állítható be, hogy a szövegünk dőlt betűtípussal jelenjen meg?',
-    options: ['font-family', 'font-style', 'font-variant', 'szam'],
+    options: ['font-family', 'font-style', 'font-variant', 'font-weight'],
     answer: 1,
     expl: ''
     },
