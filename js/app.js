@@ -48,6 +48,7 @@ function getNewQuestion() {
   if (currentQuestion.hasOwnProperty("qb")) {
     questionBlock.classList.remove("hide"); 
     qblData.innerHTML = currentQuestion.qb;
+    Prism.highlightAll();
   } else {
     qblData.innerHTML = "";
     questionBlock.classList.add("hide"); 
