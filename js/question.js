@@ -1195,7 +1195,6 @@ const quiz = [
     {
     tip: ['backend'],
     q: 'Szerveradatok létrehozásához (create) melyik HTTP-metódus szükséges?',
-    qb: 'let stilusBlokk = document.createElement("style");\nstilusBlokk.innerHTML = "body { color: red }";\ndocument.querySelector("head").<mark>___________</mark>(stilusBlokk);',
     options: ['GET', 'HEAD', 'DELETE', 'POST'],
     answer: 3,
     expl: ''
