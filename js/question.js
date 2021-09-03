@@ -1193,19 +1193,40 @@ const quiz = [
     expl: ''
     },
     {
-    tip: ['backend'],
+        tip: ['backend'],
     q: 'Szerveradatok létrehozásához (create) melyik HTTP-metódus szükséges?',
     options: ['GET', 'HEAD', 'DELETE', 'POST'],
     answer: 3,
     expl: ''
     },
     {
-    tip: ['backend'],
+        tip: ['frontend', 'javascript'],
     q: 'Hogyan állapíthatjuk meg az <code>adatLista</code> változóról, hogy adattípusa tömb?',
     options: ['typeof adatLista', 'Array.isArray(adatLista)', 'forEach(adatLista)', 'indexOf(adatLista)'],
     answer: 1,
     expl: ''
     },
+    {
+        tip: ['frontend'],
+        q: 'Hány oszlopból áll a Bootstrap rácsrendszere?',
+        options: ['4', '8', '12', '16'],
+        answer: 2,
+        expl: ''
+        },
+        {
+            tip: ['frontend', 'javascript'],
+            q: 'Melyik jellel kezdjük az egysoros megjegyzéseket a JavaScriptben?',
+            options: ['//', '/*', '**', '<!--'],
+            answer: 0,
+            expl: ''
+            }, 
+            {
+                tip: ['frontend', 'javascript'],
+                q: 'Melyik jellel kezdjük a többsoros megjegyzéseket a JavaScriptben?',
+                options: ['//', '/*', '**', '<!--'],
+                answer: 1,
+                expl: ''
+                },  
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
