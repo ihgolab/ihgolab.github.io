@@ -5,7 +5,7 @@ const quiz = [
     answer: 0
     },
     {
-    q: 'Melyik irányban kerül titkosításra a forgalom a böngésző és a meglátogatott webhelyek között, ha https protokollt használunk?',
+    q: 'Melyik irányban kerül titkosításra a forgalom a böngésző és a meglátogatott webhelyek között, ha HTTPS protokollt használunk?',
     options: ['letöltéskor', 'nem történik titkosítás', 'feltöltéskor', 'mindkét irányban'],
     answer: 3
     },
@@ -226,7 +226,7 @@ const quiz = [
     answer: 0
     },
     {
-    q: 'Melyik CSS-szelektor választja ki azon <code>p</code> elemeket, amelyek "data"-ra végződő osztályattribútummal rendelkeznek?',
+    q: 'Melyik CSS-szelektor választja ki azon <code>p</code> elemeket, amelyek <code>data</code>-ra végződő osztályattribútummal rendelkeznek?',
     options: ['p[class="data"]', 'p[class$="data"]', 'p[class^="data"]', 'p.data'],
     answer: 1
     },
@@ -337,7 +337,7 @@ const quiz = [
     answer: 3
     },
     {
-    q: 'Mi lesz a <code>name</code> változó értéke?',
+    q: 'Mi lesz az <code>elem</code> változó értéke?',
     qb: 'let elem = `elem${9%2}`;', 
     options: ['elem4', 'elem', 'elem1', 'elem$1'],
     answer: 2
@@ -348,7 +348,7 @@ const quiz = [
     answer: 3
     },
     {
-    q: 'Melyik kulcsszóval nem lehet változót létrehozni a JavaScript-nyelvben?',
+    q: 'Melyik kulcsszóval NEM lehet változót létrehozni a JavaScript-nyelvben?',
     options: ['const', 'var', 'def', 'let'],
     answer: 2
     },
@@ -380,7 +380,7 @@ const quiz = [
     },
     {
     q: 'Mi lesz a függvény visszatérési értéke?',
-    qb: 'function compute(x, y, z) { \nreturn x * y + z; }\ncompute(0, 10, 1);',
+    qb: 'function compute(x, y, z) { \n  return x * y + z; }\ncompute(0, 10, 1);',
     options: ['0', '10', '11', '1'],
     answer: 3
     },
@@ -444,7 +444,7 @@ const quiz = [
     answer: 3
     },
     {
-    q: 'Melyik kifejezés adja vissza a Gombóc sztringet a következő objektum esetében?',
+    q: 'Melyik kifejezés adja vissza a <code>Gombóc</code> sztringet a következő objektum esetében?',
     qb: 'const user = { nickName: "Gombóc" };',
     options: ['user', 'nickName', 'user["nickName"]', 'user.Name'],
     answer: 2
@@ -633,7 +633,7 @@ const quiz = [
     },
     {
     tip: ['frontend', 'javascript'],
-    q: 'Melyik DOM-metódus választja ki az összes .jpg kiterjesztésű képet?',
+    q: 'Melyik DOM-metódus választja ki az összes <code>.jpg</code> kiterjesztésű képet?',
     options: ['querySelectorAll("img[src$=jpg]")', 'querySelectorAll("img[href$=jpg]")', 'querySelectorAll("img[link$=jpg]")', 'querySelectorAll("img[url$=jpg]")'],
     answer: 0,
     expl: ''
@@ -708,8 +708,8 @@ const quiz = [
     },
     {
     tip: ['frontend', 'javascript'],
-    q: 'Melyik DOM-metódussal kapjuk vissza a dokumentumunk összes &lt;h3&gt; címkéjét tartalmazó tömböt?',
-    options: ['getElementsByName("h3")', 'getElementById("h3")', 'getElementsByTagName("h3")', 'getElementsByClassName("h3")'],
+    q: 'Melyik DOM-metódussal kapjuk vissza a dokumentumunk összes <code>&lt;h3&gt;</code> címkéjét tartalmazó tömböt?',
+    options: ['<code>getElementsByName("h3")</code>', '<code>getElementById("h3")</code>', '<code>getElementsByTagName("h3")</code>', '<code>getElementsByClassName("h3")</code>'],
     answer: 2,
     expl: ''
     },
@@ -847,7 +847,7 @@ const quiz = [
     },
     {
     tip: ['frontend', 'javascript'],
-    q: 'Hány alert üzenet fog megjelenni?',
+    q: 'Hány <code>alert</code> üzenet fog megjelenni?',
     qb: 'for (let i = 0; i &lt; 3; i++) {\n  alert(i);\n}',
     options: ['1', '0', '3', '2'],
     answer: 2,
@@ -862,7 +862,7 @@ const quiz = [
     },
     {
     tip: ['frontend', 'css'],
-    q: 'Melyik CSS-álosztály (pszeudoszelektor) hat akkor egy &lt;input&gt; elemre, amikor az egérmutatóval aktiváljuk?',
+    q: 'Melyik CSS-álosztály (pszeudoszelektor) hat akkor egy <code>&lt;input&gt;</code> elemre, amikor az egérmutatóval aktiváljuk?',
     options: [':active', ':focus', ':visited', ':hover'],
     answer: 1,
     expl: ''
@@ -942,7 +942,7 @@ const quiz = [
     },
     {
     tip: ['frontend', 'javascript'],
-    q: 'Mit csinál pop() tömbmetódus?',
+    q: 'Mit csinál <code>pop()</code> tömbmetódus?',
     options: ['Hozzáad egy elemet a tömb elejéhez.', 'Hozzáad egy elemet a tömb végéhez.', 'Törli a tömb első elemét.', 'Törli a tömb utolsó elemét.'],
     answer: 3,
     expl: ''
@@ -1066,7 +1066,7 @@ const quiz = [
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz a következő kifejezés eredménye?',
     qb: '&quot;8&quot; * &quot;8&quot;',
-    options: ['"64"', "64", "NaN", "88"],
+    options: ['"64"', "64", "NaN", '"88"'],
     answer: 1,
     expl: "",
     },
@@ -1207,26 +1207,43 @@ const quiz = [
     expl: ''
     },
     {
-        tip: ['frontend'],
-        q: 'Hány oszlopból áll a Bootstrap rácsrendszere?',
-        options: ['4', '8', '12', '16'],
-        answer: 2,
+    tip: ['frontend'],
+    q: 'Hány oszlopból áll a Bootstrap rácsrendszere?',
+    options: ['4', '8', '12', '16'],
+    answer: 2,
+    expl: ''
+    },
+    {
+    tip: ['frontend', 'javascript'],
+    q: 'Melyik jellel kezdjük az egysoros megjegyzéseket a JavaScriptben?',
+    options: ['//', '/*', '**', '&lt;!--'],
+    answer: 0,
+    expl: ''
+    }, 
+    {
+    tip: ['frontend', 'javascript'],
+    q: 'Melyik jellel kezdjük a többsoros megjegyzéseket a JavaScriptben?',
+    options: ['//', '/*', '**', '&lt;!--'],
+    answer: 1,
+    expl: ''
+    },
+    {
+        tip: ['frontend', 'CSS'],
+        q: 'Melyik CSS-tulajdonsággal tudjuk kijelölni a <code>kifli</code> elemet?',
+        qb: '&lt;ul&gt;\n  &lt;li&gt;m&eacute;z&lt;/li&gt;\n  &lt;li&gt;liszt&lt;/li&gt;\n  &lt;li&gt;kifli&lt;/li&gt;\n&lt;/ul&gt;',
+        options: ['ul:last-child', 'li:last-child', 'ul:last-element', 'li:last-element'],
+        answer: 1,
         expl: ''
         },
         {
-            tip: ['frontend', 'javascript'],
-            q: 'Melyik jellel kezdjük az egysoros megjegyzéseket a JavaScriptben?',
-            options: ['//', '/*', '**', '<!--'],
+            tip: ['frontend', 'CSS'],
+            q: 'A <code>margin</code> CSS-tulajdonságnak negatív értéket is adhatunk.',
+            options: ['igaz', 'hamis'],
             answer: 0,
             expl: ''
-            }, 
-            {
-                tip: ['frontend', 'javascript'],
-                q: 'Melyik jellel kezdjük a többsoros megjegyzéseket a JavaScriptben?',
-                options: ['//', '/*', '**', '<!--'],
-                answer: 1,
-                expl: ''
-                },  
+            },
+        
+
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
