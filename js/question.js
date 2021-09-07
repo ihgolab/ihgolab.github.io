@@ -344,7 +344,7 @@ const quiz = [
     },
     {
     q: 'Melyik kódrészlet eredményez hibát?',
-    options: ['let name : "Béla"; name : "Ödön";', 'var name : "Béla"; name : "Ödön";', 'name : "Béla"; name : "Ödön";', 'const name : "Béla"; name : "Ödön";'],
+    options: ['let name = "Béla"; name = "Ödön";', 'var name = "Béla"; name = "Ödön";', 'name = "Béla"; name = "Ödön";', 'const name = "Béla"; name = "Ödön";'],
     answer: 3
     },
     {
@@ -1133,7 +1133,7 @@ const quiz = [
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz a kód visszatérési értéke?',
-    qb: 'let ertek = 214;\nif (ertek > 200) {\n  let ertek = 300;\n}\nertek;',
+    qb: 'let ertek = 214;\nif (ertek > 200) {\n  let ertek = 300;\n}\nconsole.log(ertek);',
     options: ['214', '300', '200'],
     answer: 0,
     expl: ''
@@ -1141,7 +1141,7 @@ const quiz = [
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz a kód visszatérési értéke?',
-    qb: 'let ertek = 104;\nif (ertek > 100) {\n  ertek = 150;\n}\nertek;',
+    qb: 'let ertek = 104;\nif (ertek > 100) {\n  ertek = 150;\n}\nconsole.log(ertek);',
     options: ['100', '104', '150'],
     answer: 2,
     expl: ''
@@ -1228,22 +1228,20 @@ const quiz = [
     expl: ''
     },
     {
-        tip: ['frontend', 'CSS'],
-        q: 'Melyik CSS-tulajdonsággal tudjuk kijelölni a <code>kifli</code> elemet?',
-        qb: '&lt;ul&gt;\n  &lt;li&gt;m&eacute;z&lt;/li&gt;\n  &lt;li&gt;liszt&lt;/li&gt;\n  &lt;li&gt;kifli&lt;/li&gt;\n&lt;/ul&gt;',
-        options: ['ul:last-child', 'li:last-child', 'ul:last-element', 'li:last-element'],
-        answer: 1,
-        expl: ''
-        },
-        {
-            tip: ['frontend', 'CSS'],
-            q: 'A <code>margin</code> CSS-tulajdonságnak negatív értéket is adhatunk.',
-            options: ['igaz', 'hamis'],
-            answer: 0,
-            expl: ''
-            },
-        
-
+    tip: ['frontend', 'CSS'],
+    q: 'Melyik CSS-tulajdonsággal tudjuk kijelölni a <code>kifli</code> elemet?',
+    qb: '&lt;ul&gt;\n  &lt;li&gt;m&eacute;z&lt;/li&gt;\n  &lt;li&gt;liszt&lt;/li&gt;\n  &lt;li&gt;kifli&lt;/li&gt;\n&lt;/ul&gt;',
+    options: ['ul:last-child', 'li:last-child', 'ul:last-element', 'li:last-element'],
+    answer: 1,
+    expl: ''
+    },
+    {
+    tip: ['frontend', 'CSS'],
+    q: 'A <code>margin</code> CSS-tulajdonságnak negatív értéket is adhatunk.',
+    options: ['igaz', 'hamis'],
+    answer: 0,
+    expl: ''
+    },
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
