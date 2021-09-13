@@ -550,7 +550,7 @@ const quiz = [
     
     {
     q: 'Melyik JSON-metódus készít szabványos JSON-sztringből JavaScript-objektumot?',
-    options: ['JSON.parse()', 'JSON.use()', 'JSON.modify()', 'JSON.Stringify()'],
+    options: ['JSON.parse()', 'JSON.use()', 'JSON.modify()', 'JSON.stringify()'],
     answer: 0
     },
     {
@@ -1147,7 +1147,7 @@ const quiz = [
     expl: ''
     },     
     {
-    tip: ['frontend', 'javascript'],
+    tip: ['frontend', 'css'],
     q: 'Melyik CSS-tulajdonsággal állítható be, hogy a szövegünk dőlt betűtípussal jelenjen meg?',
     options: ['font-family', 'font-style', 'font-variant', 'font-weight'],
     answer: 1,
@@ -1163,7 +1163,7 @@ const quiz = [
     {
     tip: ['frontend'],
     q: 'Mi lesz a következő JavaScript-függvény eredménye?',
-    qb: 'for (let szam = 1; szam &lt;= 10; szam++) {\n  document.write (szam + " ");\n  if (szam % 5 == 0)\  break;\n}',
+    qb: 'for (let szam = 1; szam &lt;= 10; szam++) {\n  document.write (szam + " ");\n  if (szam % 5 == 0)\n  break;\n}',
     options: ['1 2 3 4', '1 2 3 4 5', '1 2 3 4 5 6 7 8 9', '1 2 3 4 5 6 7 8 9 10'],
     answer: 1,
     expl: ''
@@ -1242,6 +1242,42 @@ const quiz = [
     answer: 0,
     expl: ''
     },
+    {
+    tip: ['frontend', 'CSS'],
+    q: 'Melyik CSS-tulajdonsággal jelölhetem ki egy lista összes páratlan elemét?',
+    options: ['li:nth-child(even)', 'li:nth-child(odd)', 'li:nth-child(2)', 'li:nth-child(1)'],
+    answer: 1,
+    expl: ''
+    },
+    {
+    tip: ['frontend', 'CSS'],
+    q: 'Az <code>rem</code> CSS-mértékegység az <code>em</code>-től eltérően állandó az egész dokumentumban, nem függ a szülőelem értékétől.',
+    options: ['igaz', 'hamis'],
+    answer: 0,
+    expl: ''
+    },
+    {
+    tip: ['git'],
+    q: 'Hogyan nevezzük egy meglévő Git-tárolónk (repository) tartalmának letöltését és figyelését?',
+    options: ['klónozás', 'forkolás', 'elágaztatás', 'összefésülés'],
+    answer: 0,
+    expl: ''
+    },
+    {
+        tip: ['frontend', 'javascript'],
+        q: 'Melyik feltétel hamis?',
+        options: ['false == "0"', 'false === 0', 'false == [0]', 'false == ""'],
+        answer: 1,
+        expl: ''
+        },
+        {
+            tip: ['frontend', 'CSS'],
+            q: 'Mi lesz az <code>ulChildren</code> értéke?',
+            qb: '&lt;ul&gt;\n  &lt;li&gt;m&eacute;z&lt;/li&gt;\n  &lt;li&gt;liszt&lt;/li&gt;\n  &lt;li&gt;kifli&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;ul&gt;\n  &lt;li&gt;tea&lt;/li&gt;\n  &lt;li&gt;bors&oacute;&lt;/li&gt;\n  &lt;li&gt;mazsola&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;script&gt;\nlet ulChildren = document.querySelector("ul").childElementCount;\n&lt;/script&gt;',
+            options: ['2', '3', '6', '8'],
+            answer: 1,
+            expl: ''
+            },
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
