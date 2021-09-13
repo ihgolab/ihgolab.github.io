@@ -1264,20 +1264,20 @@ const quiz = [
     expl: ''
     },
     {
-        tip: ['frontend', 'javascript'],
-        q: 'Melyik feltétel hamis?',
-        options: ['false == "0"', 'false === 0', 'false == [0]', 'false == ""'],
-        answer: 1,
-        expl: ''
-        },
-        {
-            tip: ['frontend', 'CSS'],
-            q: 'Mi lesz az <code>ulChildren</code> értéke?',
-            qb: '&lt;ul&gt;\n  &lt;li&gt;m&eacute;z&lt;/li&gt;\n  &lt;li&gt;liszt&lt;/li&gt;\n  &lt;li&gt;kifli&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;ul&gt;\n  &lt;li&gt;tea&lt;/li&gt;\n  &lt;li&gt;bors&oacute;&lt;/li&gt;\n  &lt;li&gt;mazsola&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;script&gt;\nlet ulChildren = document.querySelector("ul").childElementCount;\n&lt;/script&gt;',
-            options: ['2', '3', '6', '8'],
-            answer: 1,
-            expl: ''
-            },
+    tip: ['frontend', 'javascript'],
+    q: 'Melyik feltétel hamis?',
+    options: ['false == "0"', 'false === 0', 'false == [0]', 'false == ""'],
+    answer: 1,
+    expl: ''
+    },
+    {
+    tip: ['frontend', 'CSS'],
+    q: 'Mi lesz az <code>ulChildren</code> értéke?',
+    qb: '&lt;ul&gt;\n  &lt;li&gt;m&eacute;z&lt;/li&gt;\n  &lt;li&gt;liszt&lt;/li&gt;\n  &lt;li&gt;kifli&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;ul&gt;\n  &lt;li&gt;tea&lt;/li&gt;\n  &lt;li&gt;bors&oacute;&lt;/li&gt;\n  &lt;li&gt;mazsola&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;script&gt;\nlet ulChildren = document.querySelector("ul").childElementCount;\n&lt;/script&gt;',
+    options: ['2', '3', '6', '8'],
+    answer: 1,
+    expl: ''
+    },
     {
     tip: ['frontend', 'javascript'],
     q: 'Mi lesz az eredménye a következő JavaScript-kódnak?',
