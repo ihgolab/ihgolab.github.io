@@ -1285,6 +1285,14 @@ const quiz = [
     options: ['0', '1', '2', 'szam'],
     answer: 0,
     expl: ''
+    },
+    {
+    tip: ['frontend', 'javascript'],
+    q: 'Melyik feltüntetett visszatérési érték hibás?',
+    qb: '21 + "6" // 216\n21 + false // "21false"\n21 / "3" // 7\n21 + 1 + "üveg" // "22üveg"}',
+    options: ['"216"', '"21false"', '7', '22üveg'],
+    answer: 0,
+    expl: ''
     }
     ]
     
