@@ -1452,6 +1452,47 @@ const quiz = [
         expl: ''
     },
     {
+        qt: ['újratervezés', 'frontend', 'css'],
+        q: 'Melyik CSS-utasítással tudunk a stíluslapba beilleszteni képeket, külső stíluslapot, betűtípusokat?',
+        options: ['@import', '@media', '@supports', '@insert'],
+        answer: 0,
+        expl: 'magyarázat'
+    },
+    {
+        qt: ['újratervezés', 'frontend', 'javascript'],
+        q: 'Mi lesz a tömb tartalma a metódusok futtatása után?',
+        qb: 'let myArray = [1, 2, 3, 4, 5];\nmyArray.unshift(6);\nmyArray.push(7);\nmyArray.pop();',
+        options: ['6, 1, 2, 3, 4, 5', '1, 2, 3, 4, 5, 6', '7, 1, 2, 3, 4, 5', '2, 3, 4, 5, 6, 7'],
+        answer: 0,
+        expl: 'magyarázat'
+    },
+    
+     
+    {
+        qt: ['újratervezés', 'frontend', 'javascript'],
+        q: 'Mi lesz a következő hívás visszatérési értéke?',
+        qb: '[1, 6, 7, 9].filter( num => num - 6 )',
+        options: ['[7, 9]', '[1, 6, 7, 9]', '[1, 7, 9]', '[1]'],
+        answer: 2,
+        expl: 'magyarázat'
+    },
+    
+  {
+        qt: ['újratervezés', 'frontend', 'javascript'],
+        q: 'Melyik metódus „mutátor”, azaz módosítja az eredeti tömböt?',
+        options: ['slice', 'filter', 'map', 'pop'],
+        answer: 3,
+        expl: 'magyarázat'
+    },   
+
+{
+        qt: ['újratervezés', 'frontend', 'css'],
+        q: 'Melyik attribútummal tudjuk a rádiógombot alapértelmezetten bejelöltre állítani?',
+        options: ['&lt;input type=&quot;radio&quot; name=&quot;sel&quot; checked=&quot;true&quot;&gt;', '&lt;input type=&quot;radio&quot; name=&quot;sel&quot; checked&gt;', '&lt;input type=&quot;radio&quot; name=&quot;sel&quot; type=&quot;checked&quot;&gt;', '&lt;input type=&quot;radio&quot; name=&quot;sel&quot; selected&quot;&gt;'],
+        answer: 1,
+        expl: 'magyarázat'
+    },
+    {
         qt: ['frontend', 'javascript'],
         q: 'A megjegyzésben szereplő visszatérési értékek közül melyik rossz?',
         qb: '21 + "6"        // "216"\n21 + false      // "21false"\n21 / "3"        // 7\n21 + 1 + "üveg" // "22üveg"',
