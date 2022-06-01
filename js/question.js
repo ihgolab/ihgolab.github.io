@@ -1268,7 +1268,7 @@ const quiz = [
     {
         qt: ['újratervezés', 'frontend', 'JavaScript'],
         q: 'Mi lesz az <code>elem</code> változó értéke?',
-        qb: 'let elem = `elem${9%2},;',
+        qb: 'let elem = `elem${9%2}`;',
         options: ['elem4', 'elem', 'elem1', 'elem$1'],
         answer: 2,
         expl: 'magyarázat'
