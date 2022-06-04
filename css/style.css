@@ -341,7 +341,7 @@ kbd {
  margin-bottom: 15px;
    }
    .quiz-box .option-container {
-     overflow-x: scroll; 
+     overflow-x: auto; 
    }
  }
  
