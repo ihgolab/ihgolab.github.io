@@ -267,7 +267,7 @@ const quiz = [
         q: 'Melyik CSS-kijelölő jelöli ki a leszármazottakat?',
         options: ['div ol', 'div > ol', 'div + ol', 'div ~ ol'],
         answer: 0,
-        expl: 'Szóközzel választjuk el az elemeket, ha az egy másik elem leszármazottja: <code>table tr td div p  {color: red;},/code>'
+        expl: 'Szóközzel választjuk el az elemeket, ha az egy másik elem leszármazottja: <code>table tr td div p  {color: red;}</code>'
     },
     {
         qt: ['újratervezés', 'frontend', 'JavaScript'],
@@ -721,7 +721,7 @@ const quiz = [
     {
         qt: ['újratervezés', 'frontend', 'JavaScript'],
         q: 'Az alábbiak közül melyik <code>for</code> ciklus hibás?',
-        options: ['<code>for (let i = 0; i < count(x); i++)  {...},/code>', '<code>for (let i = 0; i < a.length; i++)  {...},/code>', '<code>for (let i = 0; i < a.length;)  {...},/code>', '<code>for (let i = 0; i++)  {...},/code>'],
+        options: ['<code>for (let i = 0; i < count(x); i++)  {...}</code>', '<code>for (let i = 0; i < a.length; i++)  {...}</code>', '<code>for (let i = 0; i < a.length;)  {...}</code>', '<code>for (let i = 0; i++)  {...}</code>'],
         answer: 3,
         expl: 'magyarázat'
     },
