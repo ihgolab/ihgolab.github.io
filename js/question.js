@@ -623,7 +623,7 @@ const quiz = [
     {
         qt: ['újratervezés', 'frontend', 'JavaScript', 'DOM'],
         q: 'Melyik a helyes módszer, ha egy DOM-elemet úgy akarok bővíteni, hogy megörökölje az összes elem?',
-        options: ['<code>Element.hi.prototype = function()  {...},/code>', '<code>Element.hi = function()  {...},/code>', '<code>Element.prototype.hi = function()  {...},/code>', '<code>Element = function()  {...},/code>'],
+        options: ['<code>Element.hi.prototype = function()  {...}</code>', '<code>Element.hi = function()  {...}</code>', '<code>Element.prototype.hi = function()  {...}</code>', '<code>Element = function()  {...}</code>'],
         answer: 2,
         expl: 'magyarázat'
     },
