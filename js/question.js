@@ -1493,6 +1493,34 @@ const quiz = [
         expl: 'magyarázat'
     },
     {
+        qt: ['újratervezés', 'hálózat'],
+        q: 'Mit jelentenek a 3-assal kezdődő HTTP státusz/állapotkódok?',
+        options: ['sikeres kérés: a kérést megkapta, elfogadta, megértette a szerver', 'átirányítás: további tevékenységekre van szükség a kérés befejezéséhez', 'klienshiba: a kérés rossz szintaxisú vagy nem teljesíthető', 'szerverhiba: a szervernek nem sikerült egy helyes kérést végrehajtania'],
+        answer: 1,
+        expl: 'magyarázat'
+    },
+{
+        qt: ['újratervezés', 'hálózat'],
+        q: 'Mit jelentenek a 2-essel kezdődő HTTP státusz/állapotkódok?',
+        options: ['sikeres kérés: a kérést megkapta, elfogadta, megértette a szerver', 'átirányítás: további tevékenységekre van szükség a kérés befejezéséhez', 'klienshiba: a kérés rossz szintaxisú vagy nem teljesíthető', 'szerverhiba: a szervernek nem sikerült egy helyes kérést végrehajtania'],
+        answer: 0,
+        expl: 'magyarázat'
+    },
+{
+        qt: ['újratervezés', 'hálózat'],
+        q: 'Mit jelentenek a 4-essel kezdődő HTTP státusz/állapotkódok?',
+        options: ['sikeres kérés: a kérést megkapta, elfogadta, megértette a szerver', 'átirányítás: további tevékenységekre van szükség a kérés befejezéséhez', 'klienshiba: a kérés rossz szintaxisú vagy nem teljesíthető', 'szerverhiba: a szervernek nem sikerült egy helyes kérést végrehajtania'],
+        answer: 2,
+        expl: 'magyarázat'
+    },
+{
+        qt: ['újratervezés', 'hálózat'],
+        q: 'Mit jelentenek az 5-össel kezdődő HTTP státusz/állapotkódok?',
+        options: ['sikeres kérés: a kérést megkapta, elfogadta, megértette a szerver', 'átirányítás: további tevékenységekre van szükség a kérés befejezéséhez', 'klienshiba: a kérés rossz szintaxisú vagy nem teljesíthető', 'szerverhiba: a szervernek nem sikerült egy helyes kérést végrehajtania'],
+        answer: 3,
+        expl: 'magyarázat'
+    },
+    {
         qt: ['frontend', 'javascript'],
         q: 'A megjegyzésben szereplő visszatérési értékek közül melyik rossz?',
         qb: '21 + "6"        // "216"\n21 + false      // "21false"\n21 / "3"        // 7\n21 + 1 + "üveg" // "22üveg"',
