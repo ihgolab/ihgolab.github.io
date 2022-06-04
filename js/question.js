@@ -401,7 +401,7 @@ const quiz = [
     {
         qt: ['újratervezés', 'frontend', 'CSS'],
         q: 'Milyen színű lesz a <code>h1</code> elem?',
-        qb: '&lt;style&gt;\n#title { color: red; },\n.title { color: green; },n&lt;/style&gt;\n&lt;h1 id=&quot;title&quot; class=&quot;title&quot;&gt;Fontos&lt;/h1&gt;',
+        qb: '&lt;style&gt;\n#title { color: red; },\n.title { color: green; },\n&lt;/style&gt;\n&lt;h1 id=&quot;title&quot; class=&quot;title&quot;&gt;Fontos&lt;/h1&gt;',
         options: ['red', 'green'],
         answer: 0,
         expl: 'magyarázat'
