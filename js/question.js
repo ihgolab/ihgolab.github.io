@@ -1521,6 +1521,14 @@ const quiz = [
         expl: 'magyarázat'
     },
     {
+        qt: ['újratervezés', 'javascript'],
+        q: 'Mi az adattípusa a következő változóknak?',
+        qb: 'let value1, value2;',
+        options: ['null', 'undefined', 'false', 'érvénytelen deklaráció'],
+        answer: 3,
+        expl: 'magyarázat'
+    },
+    {
         qt: ['frontend', 'javascript'],
         q: 'A megjegyzésben szereplő visszatérési értékek közül melyik rossz?',
         qb: '21 + "6"        // "216"\n21 + false      // "21false"\n21 / "3"        // 7\n21 + 1 + "üveg" // "22üveg"',
