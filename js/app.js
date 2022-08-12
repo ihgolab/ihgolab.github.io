@@ -1,4 +1,4 @@
-// webshala: https://www.youtube.com/watch?v=J8QbjXdVl9c nyomán 
+// webshala: https://www.youtube.com/watch?v=J8QbjXdVl9c nyomán
 
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
