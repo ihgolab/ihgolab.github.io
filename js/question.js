@@ -1,4 +1,3 @@
-@@ -1,1290 +1,338 @@
 const quiz = [
 { 
 "qt": ["frontend", "css"],
