@@ -282,9 +282,9 @@ let quiz = [
 {
 "qt": ["frontend", "html"],
 "q": "Mi a HTML-táblázat fejléccellájának címkéje?",
-"options": ["<header>", "<thead>", "<th>", "<hr>"],
+"options": ["&lt;header&gt;", "&lt;thead&gt;", "&lt;th&gt;", "&lt;hr&gt;"],
 "answer": [2],
-"expl": "A táblázat fejléccelláját <code>th</code> címkével formázzuk. "
+"expl": "A táblázat fejléccelláját <code>th</code> címkével formázzuk."
 },
 {
 "qt": ["frontend", "javascript"],
