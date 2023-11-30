@@ -1,147 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>let frontendQuizHU =</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="icon" href="favicon.png" />  
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="themes/prism.css">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NDKPRSJTS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="themes/prism.css" />
+  </head>
+  <body>
 
-  gtag('config', 'G-9NDKPRSJTS');
-</script>
-</head> 
-
-<body>
-	
-  
-    <!-- header --> 
-    <header id="header" class="header">  
-        <div class="container">            
-            <h1 class="title float-left">
-                <a href="">
-                    <span class="logo-title">let frontendQuizHU =</span>
-                </a>
-            </h1>
-        </div>
+    <!-- HEADER -->
+    
+    <header id="header" class="header">
+      <div class="container">
+        <h1 class="title float-left">
+          <a href="">
+            <span class="logo-title">let frontendQuizHU =</span>
+          </a>
+        </h1>
+      </div>
     </header>
 
-   
     <section id="torzs" class="section offset-header">
-        <div class="container">
-          
-<!-- HOME BOX -->
+      <div class="container">
 
+        <!-- HOME BOX -->
 
-  <div class="home-box custom-box">
-    <h3>Kvízkérdések</h3>
-    <p>Kérdések száma: <span class="total-question"></span></p>
-    
-    <div class="picture">
-    <img class="caption" src="img/jeshoots-com--2vD8lIhdnw-unsplash.jpg" alt="ÚT program 1.0" />
-    <p class="float-right image-copyright"><small><a href="https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JESHOOTS.COM</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small></p>
-    </div>
-    
-    
-    <button class="btn" type="button" onclick="startQuiz()">Kvíz indítása</button>
-  </div>
-
-
-<!-- QUIZ BOX -->
-  
-  
-  <div class="quiz-box custom-box hide">
-    <div class="question-number"></div>
-    <div class="question-text"></div>
-    <div class="question-block hide"><pre class="language-javascript"><code class="qbl-data"> </code></pre></div> 
-    <div class="option-container"></div>
-    <div class="next-question-btn">
-      <button class="btn" type="button" onclick="next()">Következő</button>
-    </div>
-    <div class="answers-indicator">
-    <div></div>
-    </div>
-    
-  </div>
-  
-  <!-- RESULT BOX -->  
-
-  
-  <div class="result-box custom-box hide">
-    <h1>Eredmény</h1>
-    <table>
-      <tr>
-        <td>Összes kérdés:</td>
-        <td><span class="total-question"></span></td>
-      </tr>
-      <tr>
-        <td>Megválaszolt kérdések:</td>
-        <td><span class="total-attempt"></span></td>
-      </tr>
-      <tr>
-        <td>Helyes válaszok száma:</td>
-        <td><span class="total-correct"></span></td>
-      </tr>
-      <tr>
-        <td>Hibás válaszok száma:</td>
-        <td><span class="total-wrong"></span></td>
-      </tr>
-      <tr>
-        <td>Százalékos eredmény:</td>
-        <td><span class="percentage"></span></td>
-      </tr>
-      <tr>
-        <td>Összesített pontszám:</td>
-        <td><span class="total-score"></span></td>
-      </tr>
-    </table>
-    
-    <button type="button" class="btn" onclick="tryAgainQuiz()">Új kérdéssor</button> 
-    <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
-  </div>
-  
- 
-<!-- END RESULT BOX -->  
-
-
-    
+        <div class="home-box custom-box">
+          <h3>Kvízkérdések böngészőprogramozóknak</h3>
+          <p>Kérdések száma: <span class="total-question"></span></p>
+          <div class="picture">
+            <img class="caption" src="img/jeshoots-com--2vD8lIhdnw-unsplash.jpg" alt="quizábra" />
+            <p class="float-right image-copyright">
+              <small><a href="https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JESHOOTS.COM</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
+            </p>
+          </div>
+          <button class="btn" type="button" onclick="startQuiz()">Kvíz indítása</button> <button class="btn" type="button" onclick="goSource()">Ötletek, források</button>
         </div>
-       
-        
-     
-    </section>
+
+        <!-- QUIZ BOX -->
+
+        <div class="quiz-box custom-box hide">
+          <div class="question-number"></div>
+          <div class="question-text"></div>
+          <div class="question-block hide">
+            <pre><code class="qbl-data"></code></pre>
+          </div>
+          <div class="option-container"></div>
+          <div class="next-question-btn">
+            <button class="btn" type="button" onclick="next()">Következő</button>
+          </div>
+          <div class="answers-indicator">
+            <div></div>
+          </div>
+        </div>
+
+        <!-- RESULT BOX -->
+
+        <div class="result-box custom-box hide">
+          <h1>Eredmény</h1>
+          <table>
+            <tr>
+              <td>Összes kérdés:</td>
+              <td><span class="total-question"></span></td>
+            </tr>
+            <tr>
+              <td>Megválaszolt kérdések:</td>
+              <td><span class="total-attempt"></span></td>
+            </tr>
+            <tr>
+              <td>Helyes válaszok száma:</td>
+              <td><span class="total-correct"></span></td>
+            </tr>
+            <tr>
+              <td>Hibás válaszok száma:</td>
+              <td><span class="total-wrong"></span></td>
+            </tr>
+            <tr>
+              <td>Százalékos eredmény:</td>
+              <td><span class="percentage"></span></td>
+            </tr>
+            <tr>
+              <td>Összesített pontszám:</td>
+              <td><span class="total-score"></span></td>
+            </tr>
+          </table>
+          <button type="button" class="btn" onclick="tryAgainQuiz()">Új kérdéssor</button>
+          <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
+          
+          <h2>Válaszok</h2>
+          <div colspan="2" class="explanation"></div>
+          
+          <button type="button" class="btn" onclick="tryAgainQuiz()">Új kérdéssor</button>
+          <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
+          
+        </div>
+
+      <!-- *************** SOURCE BOX ***************** -->
+
+      <div class="source-box custom-box hide">
+        <h1>Ötletek, források</h1>
+        <div>
+          <p>
+            <strong>Leírások, kvízek, interjúk:</strong> <a href="https://javascript.info/" target="_new">JavaScript.info</a> 🌐 <a href="https://github.com/lydiahallie/javascript-questions" target="_new">JavaScript kérdések</a> 🌐  <a href="https://www.javatpoint.com/javascript-interview-questions" target="_new">Javatpoint interjúk</a> 🌐 <a href="https://www.javascripttutorial.ne" target="_new">JavaScript Tutorial</a> 🌐 <a href="https://developer.mozilla.org/en-US/" target="_new">MDN Web docs</a> 🌐 <a href="https://server2client.com/javaquiz/beginjavaquiz.html" target="_new">server2client kvízek</a> 🌐
+            <a href="https://play.google.com/store/apps/details?id=com.testyourself.ionic&hl=en_US" target="_new">Test Yourself (Android)</a> 🌐 <a href="https://www.w3resource.com/quizzes/index.php" target="_new">w3resource kvízek</a> 🌐 <a href="https://www.w3schools.com/" target="_new">w3schools</a> 🌐 <a href="https://play.google.com/store/apps/details?id=com.doasido4u.webquiz&hl=en_US" target="_new">Web Quiz (Android)</a>.
+          </p>
+        </div>
+        <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
+      </div>
     
-       
-  
-  <!-- ******LÁB****** -->
-  <footer class="footer fixed-bottom">
-    <div class="container text-center">
-      <small class="copyright">Balogh Ildikó <a href="mailto:ihgolab@gmail.com">✉️</a></small>
     </div>
-  </footer>
-  <!-- // láb -->
+    </section>
 
 
-  <!-- Javascript -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script> 
-  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
-  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> 
-  <script type="text/javascript" src="themes/prism.js"></script>
 
-  <script type="text/javascript" src="js/question.js"></script> 
-  <script type="text/javascript" src="js/app.js"></script>
 
-        
-</body>
-</html> 
+    <!-- ****** LÁB ****** -->
 
+    <footer class="footer fixed-bottom">
+      <div class="container text-center">
+        <small class="copyright">Balogh Ildikó <a href="mailto:ihgolab@gmail.com">✉️</a></small>
+      </div>
+    </footer>
+
+    <!-- **************** JAVASCRIPT **************** -->
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="themes/prism.js"></script>
+    <script type="text/javascript" src="question.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
