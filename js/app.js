@@ -12,7 +12,7 @@ const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const sourceBox = document.querySelector(".source-box");
-const questionLimit = 4;
+const questionLimit = 12;
 
 let questionCounter = 0;
 let currentQuestion;
