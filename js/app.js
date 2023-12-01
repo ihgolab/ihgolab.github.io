@@ -146,22 +146,6 @@ function next() {
   }
 }
 
-function quizReport() {
-  let str = '<div>'
-  roundQuestions.forEach(function (item) {
-    str += '<p><strong>' + item.q + '</strong></p>';
-    if (item.qb !== null && item.qb !== undefined && !Number.isNaN(item.qb) && item.qb !== "") {
-      str += '<pre class="language-' + item.qb[1] + '"><code class="language-' + item.qb[1] + '">' + item.qb[0] + '</code></pre>';
-    }
-    str += '<p><strong>Helyes válasz:</strong> ' + item.options[item.answer] + '</p>';
-    str += '<p><strong>Magyarázat:</strong> ' + item.expl + '</p>';
-    str += '<a href="' + item.url[0] + '"  target="_blank">🔗 ' + item.url[1] + '</a>';
-    str += '<hr>'
-  });
-  str += '</div>';
-  document.querySelector(".explanation").innerHTML = str;
-}
-
 function quizOver() {
   // a quizBox elrejtése
   quizBox.classList.add("hide");
@@ -179,7 +163,19 @@ function quizResult() {
   const percentage = (correctAnswers / questionLimit) * 100;
   resultBox.querySelector(".percentage").innerHTML = percentage.toFixed(2) + "%";
   resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + questionLimit;
-  quizReport()
+  let str = '<div>'
+  roundQuestions.forEach(function (item) {
+    str += '<p><strong>' + item.q + '</strong></p>';
+    if (item.qb !== null && item.qb !== undefined && !Number.isNaN(item.qb) && item.qb !== "") {
+      str += '<pre class="language-' + item.qb[1] + '"><code>' + item.qb[0] + '</code></pre>';
+    }
+    str += '<p><strong>Helyes válasz:</strong> ' + item.options[item.answer] + '</p>';
+    str += '<p><strong>Magyarázat:</strong> ' + item.expl + '</p>';
+    str += '<a href="' + item.url[0] + '"  target="_blank">🔗 ' + item.url[1] + '</a>';
+    str += '<hr>'
+  });
+  str += '</div>';
+  resultBox.querySelector(".explanation").innerHTML = str;
 }
 
 function resetQuiz() {
