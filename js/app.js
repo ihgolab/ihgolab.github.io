@@ -171,7 +171,7 @@ function quizResult() {
     }
     str += `<p><strong>Helyes válasz:</strong> ${item.options[item.answer]}</p>`;
     str += `<p><strong>Magyarázat:</strong> ${item.expl}</p>`;
-    str += `<a href="${item.url[0]}" target="_blank">🔗 ${item.url[1]}</a>`;
+    /* str += `<a href="${item.url[0]}" target="_blank">🔗 ${item.url[1]}</a>`; */
     str += `<hr>`;
   });
   str += `</div>`;
