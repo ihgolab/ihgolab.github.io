@@ -40,7 +40,7 @@
               <small><a href="https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JESHOOTS.COM</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
             </p>
           </div>
-          <button class="btn" type="button" onclick="startQuiz()">Kvíz indítása</button> <button class="btn" type="button" onclick="goSource()">Ötletek, források</button>
+          <button id="start" class="btn" type="button">Kvíz indítása</button> <button id="source" class="btn" type="button">Ötletek, források</button>
         </div>
 
         <!-- QUIZ BOX -->
@@ -53,7 +53,7 @@
           </div>
           <div class="option-container"></div>
           <div class="next-question-btn">
-            <button class="btn" type="button" onclick="next()">Következő</button>
+            <button id="next" class="btn" type="button">Következő</button>
           </div>
           <div class="answers-indicator">
             <div></div>
@@ -90,14 +90,14 @@
               <td><span class="total-score"></span></td>
             </tr>
           </table>
-          <button type="button" class="btn" onclick="tryAgainQuiz()">Új kérdéssor</button>
-          <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
+          <button id="tryagain" type="button" class="btn">Új kérdéssor</button>
+          <button id="gotohome" type="button" class="btn">Kezdőoldal</button>
           
           <h2>Válaszok</h2>
           <div colspan="2" class="explanation"></div>
           
-          <button type="button" class="btn" onclick="tryAgainQuiz()">Új kérdéssor</button>
-          <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
+          <button id="tryagain2" type="button" class="btn">Új kérdéssor</button>
+          <button id="gotohome2" type="button" class="btn">Kezdőoldal</button>
           
         </div>
 
@@ -111,7 +111,7 @@
             <a href="https://play.google.com/store/apps/details?id=com.testyourself.ionic&hl=en_US" target="_new">Test Yourself (Android)</a> 🌐 <a href="https://www.w3resource.com/quizzes/index.php" target="_new">w3resource kvízek</a> 🌐 <a href="https://www.w3schools.com/" target="_new">w3schools</a> 🌐 <a href="https://play.google.com/store/apps/details?id=com.doasido4u.webquiz&hl=en_US" target="_new">Web Quiz (Android)</a>.
           </p>
         </div>
-        <button type="button" class="btn" onclick="goToHome()">Kezdőoldal</button>
+        <button id="gotohomesource" type="button" class="btn">Kezdőoldal</button>
       </div>
     
     </div>
