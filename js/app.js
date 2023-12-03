@@ -242,6 +242,6 @@ document.getElementById("source").addEventListener("click", goSource);
 document.getElementById("next").addEventListener("click", next);
 document.getElementById("tryagain").addEventListener("click", tryAgainQuiz);
 document.getElementById("tryagain2").addEventListener("click", tryAgainQuiz);
-document.getElementById("gotohome").addEventListener("click", startQuiz);
-document.getElementById("gotohome2").addEventListener("click", startQuiz);
+document.getElementById("gotohome").addEventListener("click", goToHome);
+document.getElementById("gotohome2").addEventListener("click", goToHome);
 document.getElementById("gotohomesource").addEventListener("click", goToHomeSource);
