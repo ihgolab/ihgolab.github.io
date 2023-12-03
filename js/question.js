@@ -986,7 +986,7 @@ const quiz = [
 {
   qt: ['frontend', 'javascript', 'szintaktika'],
   q: 'Melyik a helyes JavaScript-megjegyzés szintaxis?',
-  options: [''' megjegyzés', '/* megjegyzés */', '/ megjegyzés /', '>> megjegyzés <<'],
+  options: ['\'\' megjegyzés', '/* megjegyzés */', '/ megjegyzés /', '>> megjegyzés <<'],
   answer: 1,
   expl: 'Az egysoros megjegyzések két törtvonallal (<code>//</code>) kezdődnek. A <code>//</code> és a sor vége közötti szöveget a JavaScript figyelmen kívül hagyja. A többsoros megjegyzések <code>/*</code> karakterekkel kezdődnek és <code>*/</code> karkterekkel végződnek, a közöttük lévő szöveget a JavaScript szintén figyelmen kívül hagyja.',
   url: ['https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics#comments', 'mdn webdocs']
