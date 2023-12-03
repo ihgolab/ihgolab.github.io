@@ -1116,7 +1116,7 @@ const quiz = [
   qt: ['frontend', 'javascript', 'sztringmetódus', 'regex'],
   q: 'Mi a <code>kimenet</code> értéke?',
   qb: ['let minta = /\\d/;\nlet sztring = &quot;ab0cde1ef2g&quot;;\nlet kimenet = sztring.split(minta, 0);', 'js'],
-  options: ['&quot;ab&quot;', '['ab', 'cde', 'ef', 'g']', '&quot;ab cde ef g&quot;', '[]'],
+  options: ['&quot;ab&quot;', '[&quot;ab&quot;, &quot;cde&quot;, &quot;ef&quot;, &quot;g&quot;]', '&quot;ab cde ef g&quot;', '[]'],
   answer: 3,
   expl: 'A <code>split()</code> metódussal egy sztringet lehet feldarabolni és a darabokat egy tömbbe helyezni. Az első argumentum az a karakter/karakterlánc vagy reguláris kifejezés, amellyel a karakterláncot fel kell osztani, a második (opcionális) argumentum pedig a sztring felosztásának száma. Ha a felosztás száma 0, üres tömböt kapunk eredményül.',
   url: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split', 'mdn webdocs']
@@ -1143,7 +1143,7 @@ const quiz = [
   qt: ['frontend', 'javascript', 'számmetódus'],
   q: 'Mi a <code>kimenet</code> értéke?',
   qb: ['let num = 96.69856;\nlet kimenet = num.toPrecision(3)', 'js'],
-  options: [''96.7'', ''96.698'', ''96.699'', ''97''],
+  options: ['&quot;96.7&quot;', '&quot;96.698&quot;', '&quot;96.699&quot;', '&quot;97&quot;'],
   answer: 0,
   expl: 'A <code>toPrecision()</code> metódus egy számot <strong>kerekít</strong> az argumentumként megadott számú számjegyre, amelyet karakterláncként ad vissza. Ha az argumentum értéke kisebb mint az egész számjegyek száma, exponenciális (tudományos) jelölésű értéket ad vissza.',
   url: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/<toPrecisi></toPrecisi>on', 'mdn webdocs']
