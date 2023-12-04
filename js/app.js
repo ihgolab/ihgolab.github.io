@@ -167,7 +167,7 @@ function quizResult() {
   roundQuestions.forEach(function (item) {
     str += `<p><strong>${item.q}</strong></p>`;
     if (item.qb !== null && item.qb !== undefined && !Number.isNaN(item.qb) && item.qb !== "") {
-      str += `<pre class="language-${item.qb[1]}"><code>${item.qb[0]}</code></pre>`;
+      str += `<pre class="language-${item.qb[1]}"><code class="language-${item.qb[1]}">${item.qb[0]}</code></pre>`;
     }
     str += `<p><strong>Helyes válasz:</strong> ${item.options[item.answer]}</p>`;
     str += `<p><strong>Magyarázat:</strong> ${item.expl}</p>`;
