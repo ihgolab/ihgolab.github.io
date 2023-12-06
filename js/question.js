@@ -825,6 +825,14 @@ const quiz = [
 {
   qt: ['frontend', 'javascript', 'operátor', 'típuskonverzió'],
   q: 'Mi a <code>kimenet</code> értéke?',
+  qb: ['let kimenet = [] == ![]', 'js'],
+  options: ['true', 'false'],
+  answer: 0,
+  expl: 'A nem típusos, „laza” egyenlőségi operátor (<code>==</code>) az Array([]) == Boolean(![]) összehasonlítást végzi el, így <code>true</code> értéket kapunk.'
+},
+{
+  qt: ['frontend', 'javascript', 'operátor', 'típuskonverzió'],
+  q: 'Mi a <code>kimenet</code> értéke?',
   qb: ['let kimenet = &quot;509&quot; - &quot;495&quot;', 'js'],
   options: ['undefined', 'NaN', '14', 'típushibát (TypeError) kapunk'],
   answer: 2,
