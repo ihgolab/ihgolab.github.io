@@ -604,6 +604,14 @@ const quiz = [
   expl: 'A destruktív hozzárendelésben az egyenlőségjel jobb oldalán lévő érték egy tömb vagy objektum („strukturált” érték), a bal oldali pedig egy vagy több változó. A hozzárendelés során egy vagy több érték kivonásra kerül a jobb oldali értékből, és a bal oldalon megnevezett változókban tárolódik.'
 },
 {
+  qt: ['frontend', 'javascript', 'destrukció'],
+  q: 'Mi a <code>kimenet</code> értéke?',
+  qb: ['let tengerek = ["Karib", "Arafura", "Vörös", "Labrador"];\nlet [kimenet] = tengerek;', 'js'],
+  options: ['"Karib", "Arafura", "Vörös", "Labrador"', '["Karib", "Arafura", "Vörös", "Labrador"]', '"Karib"', 'true', '4'],
+  answer: 2,
+  expl: 'A destruktív hozzárendelésben az egyenlőségjel jobb oldalán lévő érték egy tömb vagy objektum („strukturált” érték), a bal oldali pedig egy vagy több változó. A hozzárendelés során egy vagy több érték kivonásra kerül a jobb oldali értékből, és a bal oldalon megnevezett változókban tárolódik.'
+},   
+{
   qt: ['frontend', 'javascript', 'hatókör'],
   q: 'Mi a <code>kimenet</code> értéke?',
   qb: ['let num = 200;\nif (num > 100) {\n  let num = 50;\n}\nlet kimenet = num;', 'js'],
@@ -986,6 +994,15 @@ const quiz = [
 },
 {
   qt: ['frontend', 'javascript', 'sztringmetódus'],
+  lo: ['OK', '1', 'SK'],
+  q: 'Mi a <code>kimenet</code> értéke?',
+  qb: ['let sztring = "Jó nyár jár a vájár rájájára."\nlet kimenet = sztring.lastIndexOf("jár", 20)', 'js'],
+  options: ['24', '4', '16', '-4'],
+  answer: 2,
+  expl: 'A String objektum <code>lastIndexOf()</code> metódusa az argumentumában átadott karakterlánc utolsó előfordulásának pozícióját adja vissza. Egy opcionális kezdőpozíciót is megadhatunk, ahonnan <em>visszafelé</em> kezdjük a keresést a karakterláncban. –1-et kapunk, ha nincs találat.',
+},   
+{
+  qt: ['frontend', 'javascript', 'sztringmetódus'],
   q: 'Mi a <code>kimenet</code> értéke?',
   qb: ['let sztring = &quot;medvefülkankalin&quot;;\nlet kimenet = sztring.charAt(&quot;e&quot;);', 'js'],
   options: ['1', 'm', '[1]', 'NaN'],
@@ -1031,6 +1048,15 @@ const quiz = [
   answer: 3,
   expl: 'A léptető operátor (++) és a szorzás operátor (*) a karakterláncot implicit konverzióval szám értékre alakítja, de a plusz (+) operátor konvertálási szabályai szerint, ha az egyik operandus karakterlánc, a másik is karakterlánccá konvertálódik, és összefűzés történik az összeadás helyett.'
 },
+{
+  qt: ['frontend', 'javascript', 'típuskonverzió'],
+  lo: ['OK', '1', 'SK'],
+  q: 'Mi a <code>kimenet</code> értéke?',
+  qb: ['let kimenet = ++"29".split("")[1]', 'js'],
+  options: ['0', '10', 'NaN', '2', '3'],
+  answer: 1,
+  expl: 'A függvényhívás kiértékelési értéke magasabb: <code>"29".split("") // ["2", "9"]</code>, mint a prefix léptető operátoré: <code>++["2", "9"][1] // 10</code>.',
+  },   
 {
   qt: ['frontend', 'javascript', 'típuskonverzió', 'operátor'],
   q: 'Mi a <code>kimenet</code> értéke?',
@@ -1079,6 +1105,15 @@ const quiz = [
   answer: 1,
   expl: 'A <code>slice()</code> metódus egy sztring általunk megadott határok közötti részét adja vissza új sztringként. Az első argumentum megadja azt a pozíciót, ahol elkezdi a kivágást, míg a második (opcionális) argumentum azt a pozíciót, amely előtt a kivágás befejeződik. A negatív index a tömb végétől visszafelé számol. A <code>join()</code> metódus egy tömb, vagy egy tömbszerű objektum elemeit egy karakterlánccá egyesíti, és ezt a sztringet adja vissza. Az argumentumban megadott karakter kerül az összefűzött szövegben a részek közé, ha nem állítunk be elválasztókaraktert, a rendszer a vesszőt használja.'
 },
+{
+  qt: ['frontend', 'javascript', 'tömb', 'tömbmetódus'],
+  lo: ['OK', '1', 'SK'],
+  q: 'Mi a <code>kimenet</code> értéke?',
+  qb: ['let kimenet = Array(3).join()', 'js'],
+  options: ['<code>"undefined, undefined, undefined"</code>', '<code>",,"</code>', '<code>"", "", ""</code>', '<code>"3"</code>'],
+  answer: 1,
+  expl: 'Ha az Array konstruktornak egyetlen számparamétert adunk meg, olyan tömb jön létre, aminek a hossztulajdonsága erre a számra van beállítva, és a tömb elemei üresek. A join() tömbmetódusa egy új karakterláncot hoz létre és ad vissza a tömb összes elemének vesszővel (vagy egy megadott elválasztó karakterlánccal) történő összekapcsolásával.',
+},  
 {
   qt: ['frontend', 'javascript', 'tömbmetódus'],
   q: 'Mi a <code>kimenet</code> értéke?',
