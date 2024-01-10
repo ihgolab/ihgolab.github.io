@@ -316,6 +316,11 @@ body {
   font-family: 'Courier Prime', monospace;
 }
 
+.explanation div pre {
+  background-color: #C0EDD9;
+  padding: 4px;
+}
+
 img {
   max-width: 100%;
   margin-top: 8px;
