@@ -384,16 +384,15 @@ h6 {
 }
 
 code,
-kbd,
 samp {
   color: #54436B;
   font-size: .98em;
   font-family: 'Courier Prime', monospace;
-  white-space: pre-wrap;
 }
 
 kbd {
   background-color: #ACFFAD;
+  white-space: pre-wrap;
 }
 
 hr {
