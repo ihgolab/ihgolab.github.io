@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>let frontendQuizHU =</title>
+    <title>let dailySortedQuizHU =</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@
       <div class="container">
         <h1 class="title float-left">
           <a href="">
-            <span class="logo-title">let frontendQuizHU =</span>
+            <span class="logo-title">let dailySortedQuizHU =</span>
           </a>
         </h1>
       </div>
@@ -41,15 +41,17 @@
         <!-- HOME BOX -->
 
         <div class="home-box custom-box">
-          <h3>Kvízkérdések böngészőprogramozóknak</h3>
-          <p>Kérdések száma: <span class="total-question"></span></p>
+          <h3>Kvízkérdések</h3>
           <div class="picture">
             <img class="caption" src="img/jeshoots-com--2vD8lIhdnw-unsplash.jpg" alt="quizábra" />
             <p class="float-end image-copyright">
               <small><a href="https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JESHOOTS.COM</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
             </p>
           </div>
-          <button id="start" class="btn" type="button">Kvíz indítása</button> <button id="source" class="btn" type="button">Ötletek, források</button>
+          <button id="startDailyQuiz" class="btn" type="button">Napi kvíz</button>
+		  
+		  <button id="startSort" class="btn" type="button">Sorkérdések</button>
+       
         </div>
 
         <!-- QUIZ BOX -->
@@ -59,8 +61,10 @@
           <div class="question-text"></div>
           <div class="question-block hide">
             <pre><code class="qbl-data"></code></pre>
+            <pre><code class="info-text"></code></pre>
           </div>
           <div class="option-container"></div>
+		  
           <div class="next-question-btn">
             <button id="next" class="btn" type="button">Következő</button>
           </div>
@@ -99,35 +103,21 @@
               <td><span class="total-score"></span></td>
             </tr>
           </table>
-          <button id="tryagain" type="button" class="btn">Új kérdéssor</button>
+          <!--  <button id="tryagain" type="button" class="btn">Új kérdéssor</button> -->
           <button id="gotohome" type="button" class="btn">Kezdőoldal</button>
           
           <h2>Válaszok</h2>
           <div colspan="2" class="explanation"></div>
           
-          <button id="tryagain2" type="button" class="btn">Új kérdéssor</button>
+        <!-- <button id="tryagain2" type="button" class="btn">Új kérdéssor</button> -->
+
+
           <button id="gotohome2" type="button" class="btn">Kezdőoldal</button>
           
         </div>
-
-      <!-- *************** SOURCE BOX ***************** -->
-
-      <div class="source-box custom-box hide">
-        <h1>Ötletek, források</h1>
-        <div>
-          <p>
-            <strong>Leírások, kvízek, interjúk:</strong> <a href="https://javascript.info/" target="_new">JavaScript.info</a> 🌐 <a href="https://github.com/lydiahallie/javascript-questions" target="_new">JavaScript kérdések</a> 🌐  <a href="https://www.javatpoint.com/javascript-interview-questions" target="_new">Javatpoint interjúk</a> 🌐 <a href="https://www.javascripttutorial.net" target="_new">JavaScript Tutorial</a> 🌐 <a href="https://developer.mozilla.org/en-US/" target="_new">MDN Web docs</a> 🌐 <a href="https://server2client.com/javaquiz/beginjavaquiz.html" target="_new">server2client kvízek</a> 🌐
-            <a href="https://play.google.com/store/apps/details?id=com.testyourself.ionic&hl=en_US" target="_new">Test Yourself (Android)</a> 🌐 <a href="https://www.w3resource.com/quizzes/index.php" target="_new">w3resource kvízek</a> 🌐 <a href="https://www.w3schools.com/" target="_new">w3schools</a> 🌐 <a href="https://play.google.com/store/apps/details?id=com.doasido4u.webquiz&hl=en_US" target="_new">Web Quiz (Android)</a>.
-          </p>
-        </div>
-        <button id="gotohomesource" type="button" class="btn">Kezdőoldal</button>
-      </div>
-    
+   
     </div>
     </section>
-
-
-
 
     <!-- ****** LÁB ****** -->
 
@@ -138,10 +128,12 @@
     </footer>
 
     <!-- **************** JAVASCRIPT **************** -->
-
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="themes/prism.js"></script>
+    <script src="js/sorkerdes.js"></script>
     <script src="js/question.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/markdown.js"></script>
+
   </body>
 </html>
