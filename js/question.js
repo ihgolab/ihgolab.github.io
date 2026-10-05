@@ -1,4 +1,4 @@
-const quiz = [
+const question = [
     {
       "date": "10-1",
       "id": 1,
