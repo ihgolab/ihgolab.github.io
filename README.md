@@ -1,2 +1,2 @@
 # ihgolab.github.io
-Frontend kvízek
+Kvízjátékok
