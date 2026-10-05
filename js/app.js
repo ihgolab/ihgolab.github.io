@@ -1,247 +1,320 @@
-// webshala: https://www.youtube.com/watch?v=J8QbjXdVl9c nyomán 
-
-const questionNumber = document.querySelector(".question-number");
-const questionText = document.querySelector(".question-text");
-const questionBlock = document.querySelector(".question-block");
-const qblData = document.querySelector(".qbl-data");
-const langData = document.querySelector(".question-block pre");
-const optionContainer = document.querySelector(".option-container");
-const answersIndicatorContainer = document.querySelector(".answers-indicator");
-const explanationContainer = document.querySelector(".explanation");
+// -------------------- ELEMEK --------------------
 const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
-const sourceBox = document.querySelector(".source-box");
-const questionLimit = 12;
-
+const questionNumber = document.querySelector(".question-number");
+const questionText = document.querySelector(".question-text");
+const optionContainer = document.querySelector(".option-container");
+const answersIndicatorContainer =
+  document.querySelector(".answers-indicator");
+const explanationContainer =
+  document.querySelector(".explanation");
+// -------------------- ÁLLAPOT --------------------
+/*let dailyQuestions = [];*/
+let activeQuiz = [];
 let questionCounter = 0;
-let currentQuestion;
-let availableQuestions = [];
-let roundQuestions = [];
-let availableOptions = [];
 let correctAnswers = 0;
 let attempt = 0;
-
-// a kérdéseket az 'availableQuestions' tömbbe helyezzük
-function setAvailableQuestions() {
-  const totalQuestion = quiz.length;
-  for (let i = 0; i < totalQuestion; i++) {
-    availableQuestions.push(quiz[i]);
+let currentQuestion = null;
+let answered = false;
+let QUESTIONS_PER_GAME = 10;
+// -------------------- NAPI KÉRDÉSEK --------------------
+const quiz = [
+  ...question,
+  ...sorkerdes
+];
+const now = new Date();
+const today = `${now.getMonth() + 1}-${now.getDate()}`;
+function loadDailyQuestions() {
+  activeQuiz = quiz.filter(
+      q => q.date === today);
+  if (activeQuiz.length === 0) {
+    questionText.innerHTML =
+      "Ma még nincs kvízkérdés.";
+    return false;
   }
+  return true;
 }
+// -------------------- START --------------------
 
-// kérdésszám, kérdések és válaszok beállítása
-function getNewQuestion() {
-  // kérdésszám beállítása
-  questionNumber.innerHTML = (questionCounter + 1) + " / " + questionLimit + ". kérdés";
-  // kérdés szövegének beállítása
-  // véletlenszerű kérdéslekérdezés
-  const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-  currentQuestion = questionIndex;
-  questionText.innerHTML = currentQuestion.q;
-  // a 'questionIndex' pozíciójának kinyerése az 'availableQuestion' tömbből
-  const index1 = availableQuestions.indexOf(questionIndex);
-  roundQuestions.push(availableQuestions[index1]);
-  // eltávolítja a 'questionIndex' értéket az 'availableQuestion' tömbből, hogy a kérdés ne ismétlődjön meg
-  availableQuestions.splice(index1, 1);
-  if (currentQuestion.hasOwnProperty("img")) {
-    const img = document.createElement("img");
-    img.src = currentQuestion.img;
-    questionText.appendChild(img);
+
+function startDailyQuiz() {
+  if (!loadDailyQuestions()) {
+    return;
   }
-  if (currentQuestion.hasOwnProperty("qb")) {
-    questionBlock.classList.remove("hide");
-    langData.removeAttribute("class");
-    qblData.removeAttribute("class");
-    langData.classList.add("language-" + currentQuestion.qb[1]);
-    qblData.innerHTML = currentQuestion.qb[0];
-    Prism.highlightAll();
-  } else {
-    qblData.innerHTML = "";
-    questionBlock.classList.add("hide");
-  }
-
-  // válaszok beállítása
-  // a válaszok számának lekérdezése
-  const optionLen = currentQuestion.options.length;
-  // a válaszokat az 'availableOptions' tömbbe tesszük
-  for (let i = 0; i < optionLen; i++) {
-    availableOptions.push(i);
-  }
-  optionContainer.innerHTML = '';
-  let animationDelay = 0.15;
-  // válaszok létrehozása html-ben
-  for (let i = 0; i < optionLen; i++) {
-    // véletlenszerű válaszsorrend
-    const optonIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)];
-    // az 'optonIndex' pozíciójának kinyerése az 'availableOptions' tömbből
-    const index2 = availableOptions.indexOf(optonIndex);
-    // távolítsuk el az 'optonIndex'-et az 'availableOptions' tömbből, hogy a válasz ne ismétlődjön meg
-    availableOptions.splice(index2, 1);
-    const option = document.createElement("div");
-    option.innerHTML = currentQuestion.options[optonIndex];
-    option.id = optonIndex;
-    option.style.animationDelay = animationDelay + "s";
-    animationDelay = animationDelay + 0.15;
-    option.className = "option";
-    optionContainer.appendChild(option);
-    option.setAttribute("onclick", "getResult(this)");
-  }
-  questionCounter++;
-}
-
-// az aktuális próbálkozás eredményének lekérdezése
-function getResult(element) {
-  const id = parseInt(element.id);
-  // a válasz kinyerése a kattintott opció azonosítójának összehasonlításával
-  if (id == currentQuestion.answer) {
-    // zöld színűre állítja a helyes választ
-    element.classList.add("correct");
-    // hozzáadjuk a 'correct' jelzőt a helyes jelöléshez
-    updateAnswerIndicator("correct");
-    correctAnswers++;
-  } else {
-    // állítsuk be a piros háttérszínt a helytelen válaszhoz
-    element.classList.add("wrong");
-    // adjunk 'wrong' jelzőt a hibás jelöléshez
-    updateAnswerIndicator("wrong");
-    // ha a válasz helytelen, akkor a helyes válasz megjelenítése a zöld szín hozzáadásával
-    const optionLen = optionContainer.children.length;
-    for (let i = 0; i < optionLen; i++) {
-      if (parseInt(optionContainer.children[i].id) === currentQuestion.answer) {
-        optionContainer.children[i].classList.add("correct");
-      }
-    }
-  }
-  attempt++;
-  unclickableOptions();
-}
-// tedd a többi választ kattinthatatlanná, ha a felhasználó kiválasztott már egy választ 
-// (korlátozzuk a felhasználót abban, hogy megváltoztassa a válaszát)
-function unclickableOptions() {
-  const optionLen = optionContainer.children.length;
-  for (let i = 0; i < optionLen; i++) {
-    optionContainer.children[i].classList.add("already-answered");
-  }
-}
-
-function answersIndicator() {
-  answersIndicatorContainer.innerHTML = "";
-  const totalQuestion = questionLimit;
-  for (let i = 0; i < totalQuestion; i++) {
-    const indicator = document.createElement("div");
-    answersIndicatorContainer.appendChild(indicator);
-  }
-}
-
-function updateAnswerIndicator(markType) {
-  answersIndicatorContainer.children[questionCounter - 1].classList.add(markType);
-}
-
-function next() {
-  if (questionCounter === questionLimit) {
-    quizOver();
-  } else {
-    getNewQuestion();
-  }
-}
-
-function quizOver() {
-  // a quizBox elrejtése
-  quizBox.classList.add("hide");
-  // mutassa az eredményBoxot
-  resultBox.classList.remove("hide");
-  quizResult();
-}
-
-// a kvízeredmény megjelenítése
-function quizResult() {
-  resultBox.querySelector(".total-question").innerHTML = questionLimit;
-  resultBox.querySelector(".total-attempt").innerHTML = attempt;
-  resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
-  resultBox.querySelector(".total-wrong").innerHTML = attempt - correctAnswers;
-  const percentage = (correctAnswers / questionLimit) * 100;
-  resultBox.querySelector(".percentage").innerHTML = percentage.toFixed(2) + "%";
-  resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + questionLimit;
-  let str = `<div>`;
-  roundQuestions.forEach(function (item) {
-    str += `<p><strong>${item.q}</strong></p>`;
-    if (item.qb !== null && item.qb !== undefined && !Number.isNaN(item.qb) && item.qb !== "") {
-      str += `<pre><code>${item.qb[0]}</code></pre>`;
-    }
-    str += `<p><strong>Helyes válasz:</strong> ${item.options[item.answer]}</p>`;
-    str += `<p><strong>Magyarázat:</strong> ${item.expl}</p>`;
-    /* str += `<a href="${item.url[0]}" target="_blank">🔗 ${item.url[1]}</a>`; */
-    str += `<hr>`;
-  });
-  str += `</div>`;
-  resultBox.querySelector(".explanation").innerHTML = str;
-}
-
-function resetQuiz() {
-  roundQuestions = [];
+  homeBox.classList.add("hide");
+  quizBox.classList.remove("hide");
   questionCounter = 0;
   correctAnswers = 0;
   attempt = 0;
-  availableQuestions.length = 0;
+  createIndicators();
+  loadQuestion();
+}
+// -------------------- JELZŐK --------------------
+function createIndicators() {
+  answersIndicatorContainer.innerHTML = "";
+  activeQuiz.forEach(() => {
+    const div = document.createElement("div");
+    answersIndicatorContainer.appendChild(div);
+  });
+}
+function updateIndicator(type) {
+  answersIndicatorContainer
+  .children[questionCounter]
+  .classList.add(type);
+}
+// -------------------- KÉRDÉS BETÖLTÉS --------------------
+function loadQuestion() {
+  answered = false;
+  currentQuestion = activeQuiz[questionCounter];
+  const infoText =
+    currentQuestion.type === "sort"
+      ? " ↕️ Húzd sorrendbe!"
+      : " 🌟 Holnap új kihívások érkeznek!";
+  questionNumber.innerHTML =
+    `${questionCounter + 1} / ${activeQuiz.length}${infoText}`;
+  optionContainer.innerHTML = "";
+  if (currentQuestion.type === "sort") {
+    loadSortQuestion(currentQuestion);
+  } else {
+    loadClassicQuestion(currentQuestion);
+  }
+}
+// -------------------- FELELETVÁLASZTÓS --------------------
+function loadClassicQuestion(q) {
+  questionText.innerHTML = q.question;
+
+  const shuffledOptions =
+    q.options.map((option, index) => ({
+      text: option,
+      originalIndex: index
+    }));
+
+  for (let i = shuffledOptions.length - 1; i > 0; i--) {
+    const j = Math.floor(
+      Math.random() * (i + 1)
+    );
+
+    [shuffledOptions[i], shuffledOptions[j]] =
+    [shuffledOptions[j], shuffledOptions[i]];
+  }
+
+  shuffledOptions.forEach((item) => {
+    const div = document.createElement("div");
+    div.className = "option";
+    div.innerHTML = item.text;
+    div.addEventListener("click", () => {
+      if (answered)
+        return;
+      answered = true;
+      attempt++;
+      if (item.originalIndex === q.answer) {
+        div.classList.add("correct");
+        correctAnswers++;
+        q.wasCorrect = true;
+        updateIndicator("correct");
+      } else {
+        div.classList.add("wrong");
+        q.wasCorrect = false;
+        updateIndicator("wrong");
+      }
+    });
+    optionContainer.appendChild(div);
+  });
+}
+// -------------------- SORRENDEZŐS --------------------
+function loadSortQuestion(q) {
+  questionText.innerHTML = q.title;
+  optionContainer.innerHTML = `
+    <ul id="sortable" class="sortable-list">
+    ${q.items.map(item => `
+      <li data-label="${item.label}">
+          ${item.text}
+      </li>
+    `).join("")}
+    </ul>
+`;
+  Sortable.create(
+    document.getElementById("sortable"), {
+    animation: 150
+  });
+  document
+  .getElementById("checkSort")
+  .addEventListener("click", () => {
+    if (answered)
+      return;
+    answered = true;
+    attempt++;
+    const userOrder =
+      [...document.querySelectorAll("#sortable li")]
+    .map(li => li.dataset.label);
+    const correct =
+      JSON.stringify(userOrder) ===
+      JSON.stringify(q.correctOrder);
+    if (correct) {
+      correctAnswers++;
+      q.wasCorrect = true;
+      updateIndicator("correct");
+    } else {
+      q.wasCorrect = false;
+      updateIndicator("wrong");
+    }
+  });
+}
+// -------------------- KÖVETKEZŐ --------------------
+function nextQuestion() {
+  // Sorkérdés automatikus értékelése
+  if (
+      currentQuestion.type === "sort" &&
+      !answered
+  ) {
+      answered = true;
+      attempt++;
+      const userOrder =
+          [...document.querySelectorAll("#sortable li")]
+          .map(li => li.dataset.label);
+      const correct =
+          JSON.stringify(userOrder) ===
+          JSON.stringify(currentQuestion.correctOrder);
+      if (correct) {
+          correctAnswers++;
+          currentQuestion.wasCorrect = true;
+          updateIndicator("correct");
+      } else {
+          currentQuestion.wasCorrect = false;
+          updateIndicator("wrong");
+      }
+  }
+  if(!answered){
+      alert("Előbb válaszolj!");
+      return;
+  }
+  questionCounter++;
+  if(questionCounter >= activeQuiz.length){
+      quizOver();
+      return;
+  }
+  loadQuestion();
 }
 
-function tryAgainQuiz() {
-  // rejtsük el a resultBoxot
-  resultBox.classList.add("hide");
-  // mutassuk meg a quizBoxot
+// -------------------- EREDMÉNY --------------------
+function quizOver() {
+  quizBox.classList.add("hide");
+  resultBox.classList.remove("hide");
+  showResults();
+}
+function showResults() {
+  resultBox.querySelector(".total-question")
+  .innerHTML = activeQuiz.length;
+  resultBox.querySelector(".total-attempt")
+  .innerHTML = attempt;
+  resultBox.querySelector(".total-correct")
+  .innerHTML = correctAnswers;
+  resultBox.querySelector(".total-wrong")
+  .innerHTML = attempt - correctAnswers;
+  const percentage =
+    (correctAnswers / activeQuiz.length) * 100;
+  resultBox.querySelector(".percentage")
+  .innerHTML = percentage.toFixed(2) + "%";
+  resultBox.querySelector(".total-score")
+  .innerHTML =
+`${correctAnswers} / ${activeQuiz.length}`;
+  let html = "";
+  activeQuiz.forEach(item => {
+    html += `
+      <p>
+        <strong>
+          ${item.question || item.title}
+        </strong>
+        ${item.wasCorrect ? "✅" : "❌"}
+      </p>
+    `;
+    if (item.type === "sort") {
+      html += `
+      <p>
+      <strong>Helyes sorrend:</strong>
+      ${item.correctOrder.join(" ⇒ ")}
+      </p>
+      `;
+      html += `
+      <p>
+      ${item.learnMore?.summary || ""}
+      </p>
+      `;
+    } else {
+      html += `
+      <p>
+      <strong>Magyarázat:</strong>
+      ${item.expl}
+      </p>
+      `;
+    }
+    html += "<hr>";
+  });
+  explanationContainer.innerHTML = html;
+}
+
+function startGame() {
+  homeBox.classList.add("hide");
   quizBox.classList.remove("hide");
-  resetQuiz();
-  startQuiz();
+  questionCounter = 0;
+  correctAnswers = 0;
+  attempt = 0;
+  createIndicators();
+  loadQuestion();
 }
 
+function startGame() {
+  questionCounter = 0;
+  correctAnswers = 0;
+  attempt = 0;
+  homeBox.classList.add("hide");
+  resultBox.classList.add("hide");
+  quizBox.classList.remove("hide");
+  createIndicators();
+  loadQuestion();
+}
+
+function startSortQuiz() {
+  gameMode = "sort";
+  const shuffled = [...sorkerdes];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(
+        Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] =
+      [shuffled[j], shuffled[i]];
+  }
+  activeQuiz = shuffled.slice(0, QUESTIONS_PER_GAME);
+  startGame();
+}
+
+// -------------------- KEZDŐOLDAL --------------------
 function goToHome() {
-  // rejtsük el a resultBoxot
   resultBox.classList.add("hide");
-  // a homeBox megjelenítése
-  homeBox.classList.remove("hide");
-  resetQuiz();
-}
-
-function goSource() {
-  // rejtsük el a homeBoxot
-  homeBox.classList.add("hide");
-  // a sourceBox megjelenítése 
-  sourceBox.classList.remove("hide");
-}
-
-
-function goToHomeSource() {
-  // rejtsük el a sourceBoxot
-  sourceBox.classList.add("hide");
-  // a homeBox megjelenítése
   homeBox.classList.remove("hide");
 }
+// -------------------- ESEMÉNYEK --------------------
+window.addEventListener("DOMContentLoaded", () => {
 
-// #### KEZDŐPONT #####
-
-function startQuiz() {
-  // homeBox elrejtése
-  homeBox.classList.add("hide");
-  // mutasd a quizBoxot
-  quizBox.classList.remove("hide");
-  // először az összes kérdést beállítjuk az availableQuestions tömbbe
-  setAvailableQuestions();
-  // másodszor meghívjuk a getNewQuestion() függvényt
-  getNewQuestion();
-  // a válaszok mutatójának létrehozásához
-  answersIndicator();
-}
-
-window.onload = function () {
-  homeBox.querySelector(".total-question").innerHTML = questionLimit + " / " + quiz.length;
-};
-
-document.getElementById("start").addEventListener("click", startQuiz);
-document.getElementById("source").addEventListener("click", goSource);
-document.getElementById("next").addEventListener("click", next);
-document.getElementById("tryagain").addEventListener("click", tryAgainQuiz);
-document.getElementById("tryagain2").addEventListener("click", tryAgainQuiz);
-document.getElementById("gotohome").addEventListener("click", goToHome);
-document.getElementById("gotohome2").addEventListener("click", goToHome);
-document.getElementById("gotohomesource").addEventListener("click", goToHomeSource);
+  document
+  .getElementById("startDailyQuiz")
+  .addEventListener("click", startDailyQuiz);
+  document
+  .getElementById("startSort")
+  .addEventListener("click", startSortQuiz);
+  document
+  .getElementById("next")
+  .addEventListener("click", nextQuestion);
+  document
+  .getElementById("gotohome")
+  .addEventListener("click", goToHome);
+  document
+  .getElementById("gotohome2")
+  .addEventListener("click", goToHome);
+  document
+/*  .getElementById("tryagain")
+  .addEventListener("click", restartGame);
+  document
+  .getElementById("tryagain2")
+.addEventListener("click", restartGame); */
+});
