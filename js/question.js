@@ -355,7 +355,7 @@ const question = [
       "question": "Ki alkotta a *Gondolkodó* című szobrot?",
       "options": ["Donatello", "Giovanni Bernini", "Auguste Rodin", "Leonardo da Vinci"],
       "answer": 2,
-      "expl": "A *Gondolkodó* című szobrot Rodin festette."
+      "expl": "A *Gondolkodó* című szobor Rodin (1840–1917) francia szobrász műve."
     }, {
       "date": "10-6",
       "id": 2,
